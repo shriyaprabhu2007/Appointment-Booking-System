@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+</head>
+
+<body>
+
+<h2>Book Appointment</h2>
+
+<form action="/book" method="POST">
+
+<label>Name</label><br>
+<input type="text" name="name" required><br><br>
+
+<label>Email</label><br>
+<input type="email" name="email" required><br><br>
+
+<label>Phone</label><br>
+<input type="text" name="phone" required><br><br>
+
+<label>Service</label><br>
+
+<select name="service">
+    <option>General Checkup</option>
+    <option>Dental</option>
+    <option>Eye Care</option>
+    <option>Cardiology</option>
+</select>
+
+<br><br>
+
+<label>Date</label><br>
+<input type="date" name="date" required><br><br>
+
+<label>Time</label><br>
+<input type="time" name="time" required><br><br>
+
+<label>Message</label><br>
+<textarea name="message"></textarea>
+
+<br><br>
+
+<button type="submit">Book Appointment</button>
+
+</form>
+
+<br>
+
+<a href="/">Home</a>
+
+</body>
+</html>
