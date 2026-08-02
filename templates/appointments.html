@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Appointments</title>
+
+<title>Appointments</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
-<h2>Booked Appointments</h2>
+<h2 class="title">Booked Appointments</h2>
 
-<table border="1" cellpadding="10">
+<table>
 
 <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Service</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Message</th>
-    <th>Action</th>
+
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Service</th>
+<th>Date</th>
+<th>Time</th>
+<th>Message</th>
+<th>Action</th>
+
 </tr>
 
 {% for row in appointments %}
 
 <tr>
 
-<td>{{ row[0] }}</td>
-<td>{{ row[1] }}</td>
-<td>{{ row[2] }}</td>
-<td>{{ row[3] }}</td>
-<td>{{ row[4] }}</td>
-<td>{{ row[5] }}</td>
-<td>{{ row[6] }}</td>
-<td>{{ row[7] }}</td>
+<td>{{row[0]}}</td>
+<td>{{row[1]}}</td>
+<td>{{row[2]}}</td>
+<td>{{row[3]}}</td>
+<td>{{row[4]}}</td>
+<td>{{row[5]}}</td>
+<td>{{row[6]}}</td>
+<td>{{row[7]}}</td>
 
 <td>
-<a href="/delete/{{ row[0] }}">Delete</a>
+<a class="delete" href="/delete/{{row[0]}}">
+Delete
+</a>
 </td>
 
 </tr>
@@ -44,10 +52,6 @@
 {% endfor %}
 
 </table>
-
-<br>
-
-<a href="/">Home</a>
 
 </body>
 </html>

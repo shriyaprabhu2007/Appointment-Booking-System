@@ -2,23 +2,56 @@
 <html>
 <head>
     <title>Appointment Booking System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
 
-<h1>Appointment Booking System</h1>
+<nav>
+    <h2>🏥 Appointment Booking</h2>
 
-<p>Welcome to our Appointment Booking Website.</p>
+    <div>
+        <a href="/">Home</a>
+        <a href="/appointment">Book</a>
+        <a href="/appointments">Appointments</a>
+    </div>
+</nav>
 
-<a href="/appointment">
-    <button>Book Appointment</button>
-</a>
+<div class="hero">
 
-<br><br>
+    <div class="hero-text">
 
-<a href="/appointments">
-    <button>View Appointments</button>
-</a>
+        <h1>Book Your Appointment Online</h1>
+
+        <p>
+            Fast, secure and easy appointment booking for hospitals and clinics.
+        </p>
+
+        <a href="/appointment">
+            <button>Book Appointment</button>
+        </a>
+
+    </div>
+
+</div>
+
+<div class="features">
+
+    <div class="card">
+        <h3>👨‍⚕️ Doctors</h3>
+        <p>Experienced Specialists</p>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Quick Booking</h3>
+        <p>Book within seconds</p>
+    </div>
+
+    <div class="card">
+        <h3>🔒 Secure</h3>
+        <p>Your data is safe</p>
+    </div>
+
+</div>
 
 </body>
 </html>
