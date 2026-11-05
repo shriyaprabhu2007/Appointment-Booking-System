@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h2>Edit Appointment</h2>
+
+    <form method="POST">
+
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ data[1] }}" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ data[2] }}" required>
+
+        <label>Phone:</label>
+        <input type="text" name="phone" value="{{ data[3] }}" required>
+
+        <label>Service:</label>
+        <input type="text" name="service" value="{{ data[4] }}" required>
+
+        <label>Date:</label>
+        <input type="date" name="date" value="{{ data[5] }}" required>
+
+        <label>Time:</label>
+        <input type="time" name="time" value="{{ data[6] }}" required>
+
+        <label>Message:</label>
+        <textarea name="message">{{ data[7] }}</textarea>
+
+        <button type="submit">Update Appointment</button>
+
+    </form>
+
+</body>
+</html>
