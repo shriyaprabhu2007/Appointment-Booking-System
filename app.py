@@ -90,5 +90,41 @@ def delete(id):
 
     return redirect(url_for('appointments'))
 
+
+# Edit Appointment
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    conn = sqlite3.connect("database.db")
+    cur = conn.cursor()
+
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        service = request.form['service']
+        date = request.form['date']
+        time = request.form['time']
+        message = request.form['message']
+
+        cur.execute("""
+        UPDATE appointments
+        SET name=?, email=?, phone=?, service=?,
+        date=?, time=?, message=?
+        WHERE id=?
+        """, (name, email, phone, service, date, time, message, id))
+
+        conn.commit()
+        conn.close()
+        return redirect(url_for('appointments'))
+
+    cur.execute("SELECT * FROM appointments WHERE id=?", (id,))
+    data = cur.fetchone()
+    conn.close()
+
+    if data is None:
+        return "Appointment not found", 404
+
+    return render_template("edit.html", data=data)
+
 if __name__ == "__main__":
     app.run(debug=True)
